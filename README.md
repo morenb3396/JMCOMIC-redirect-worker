@@ -23,6 +23,14 @@ wrangler.jsonc       Worker、KV、Cron 与运行参数
 .github/workflows/   GitHub Actions 检查
 ```
 
+## 一键部署
+
+> 发布仓库后，将链接中的 `YOUR_GITHUB_USERNAME` 替换为实际 GitHub 用户名。
+
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/YOUR_GITHUB_USERNAME/JMCOMIC-redirect-worker)
+
+该入口用于把公开仓库部署到使用者自己的 Cloudflare 账号，并按 `wrangler.jsonc` 配置 Worker、KV 与 Cron。仓库必须是公开仓库。
+
 ## 部署位置
 
 - Git 仓库接入：Cloudflare Dashboard → **Workers & Pages** → **Import a repository**
