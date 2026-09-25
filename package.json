@@ -1,0 +1,47 @@
+{
+  "name": "jm-mainland-redirect-worker",
+  "version": "1.0.0",
+  "description": "A Cloudflare Worker that tracks a published mainland entry domain and redirects visitors to the latest confirmed target.",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "test": "node --test",
+    "check:source": "node scripts/check-source.js",
+    "dev": "wrangler dev --test-scheduled",
+    "check": "npm test && wrangler deploy --dry-run --outdir .wrangler-dry-run",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "cloudflare": {
+    "bindings": {
+      "STATE": {
+        "description": "KV namespace used to store the last confirmed redirect target and health state."
+      },
+      "SOURCE_URL": {
+        "description": "Public release page that lists the current mainland entry domains."
+      },
+      "BOOTSTRAP_TARGET": {
+        "description": "Fallback HTTPS URL used before the first successful scheduled check."
+      },
+      "CONFIRMATION_COUNT": {
+        "description": "Number of consecutive observations required before changing an existing target (1-5)."
+      },
+      "TARGET_HOST_KEYWORDS": {
+        "description": "Comma-separated keywords allowed in redirect target hostnames."
+      },
+      "PRESERVE_PATH": {
+        "description": "Set to true to append the incoming path and query string to the redirect target."
+      },
+      "MAX_SOURCE_BYTES": {
+        "description": "Maximum number of bytes read from the release page per check."
+      }
+    }
+  },
+  "devDependencies": {
+    "wrangler": "4.140.0"
+  }
+}

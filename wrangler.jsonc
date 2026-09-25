@@ -1,0 +1,34 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "jm-mainland-redirect",
+  "main": "src/index.js",
+  "compatibility_date": "2026-09-25",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
+
+  "vars": {
+    "SOURCE_URL": "https://jmcomictt.site/",
+    "BOOTSTRAP_TARGET": "https://18comic.vip/",
+    "CONFIRMATION_COUNT": "2",
+    "TARGET_HOST_KEYWORDS": "comic,jm",
+    "PRESERVE_PATH": "false",
+    "MAX_SOURCE_BYTES": "524288"
+  },
+
+  "kv_namespaces": [
+    {
+      "binding": "STATE"
+    }
+  ],
+
+  "triggers": {
+    "crons": ["*/30 * * * *"]
+  },
+
+  "observability": {
+    "enabled": true,
+    "head_sampling_rate": 1,
+    "redact_query_string": true
+  }
+}
