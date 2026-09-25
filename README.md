@@ -25,8 +25,7 @@ wrangler.jsonc       Worker、KV、Cron 与运行参数
 
 ## 一键部署
 
-<!-- 发布前将 YOUR_GITHUB_USERNAME 替换为实际 GitHub 用户名。 -->
-[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/YOUR_GITHUB_USERNAME/JMCOMIC-redirect-worker)
+[![Deploy to Cloudflare](https://deploy.workers.cloudflare.com/button)](https://deploy.workers.cloudflare.com/?url=https://github.com/morenb3396/JMCOMIC-redirect-worker)
 
 ## 部署位置
 
