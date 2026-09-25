@@ -1,7 +1,7 @@
 {
-  "name": "jm-mainland-redirect-worker",
+  "name": "jmcomic-redirect-worker",
   "version": "1.0.0",
-  "description": "A Cloudflare Worker that tracks a published mainland entry domain and redirects visitors to the latest confirmed target.",
+  "description": "A Cloudflare Worker that tracks published JMCOMIC mainland entry domains and redirects to the latest confirmed target.",
   "private": true,
   "license": "MIT",
   "type": "module",
